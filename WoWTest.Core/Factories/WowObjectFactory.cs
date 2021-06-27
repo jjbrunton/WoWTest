@@ -19,7 +19,7 @@ namespace WoWTest.Core.Factories
             {
                 return new Npc(this.wowProcess, wowObject.BaseAddress) as T;
             }
-            else if (typeof(T) == typeof(Npc))
+            else if (typeof(T) == typeof(Player))
             {
                 return new Player(this.wowProcess, wowObject.BaseAddress) as T;
             }

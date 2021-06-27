@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reactive.Linq;
 using System.Windows;
 using Autofac;
 using WoWTest.Core;
@@ -17,7 +18,7 @@ namespace WoWTest.GUI
             Container = this.BuildContainer();
 
             var gameService = Container.Resolve<GameService>();
-            gameService.Me.Subscribe(x => Console.WriteLine($"My health: {x.CurrentHealth}"));
+            gameService.Me.Take(1).Subscribe(x => Console.WriteLine($"Player base address: 0x{x.BaseAddress.ToString("X")}"));
 
             Current.MainWindow = Container.Resolve<MainWindow>();
             Current.MainWindow.Show();

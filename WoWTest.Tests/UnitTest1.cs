@@ -4,8 +4,19 @@ namespace WoWTest.Tests
 {
     public class GameServiceTests
     {
+        public GameServiceTests()
+        {
+
+        }
+
         [Fact]
-        public void Test1()
+        public void TestLocalPlayerGuidHasBeenRetrieved()
+        {
+
+        }
+
+        [Fact]
+        public void TestLocalPlayerIsPresentInObjectList()
         {
 
         }

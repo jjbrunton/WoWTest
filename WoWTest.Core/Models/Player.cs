@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using Process.NET;
 
 namespace WoWTest.Core.Models

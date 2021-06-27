@@ -58,7 +58,7 @@ namespace WoWTest.Core
             this.npcs = this.objectManager.Where(x => x.Type == ObjectType.Unit)
                 .Select(x => objectFactory.Create<Npc>(x));
 
-            this.players = this.objectManager.Where(x => x.Type == ObjectType.Unit)
+            this.players = this.objectManager.Where(x => x.Type == ObjectType.Player)
                 .Select(x => objectFactory.Create<Player>(x));
         }
     }

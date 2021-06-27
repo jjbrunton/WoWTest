@@ -20,10 +20,16 @@ namespace WoWTest.GUI.ViewModels
 
             gameState.NpcList.ObserveOn(RxApp.MainThreadScheduler)
                 .ToPropertyEx(this, x => x.NpcList);
+
+            gameState.Players.ObserveOn(RxApp.MainThreadScheduler)
+                .ToPropertyEx(this, x => x.PlayerList);
         }
 
         [ObservableAsProperty]
         public IEnumerable<Npc> NpcList { get; }
+
+        [ObservableAsProperty]
+        public IEnumerable<Player> PlayerList { get; }
 
         [ObservableAsProperty]
         public Player Player { get; }

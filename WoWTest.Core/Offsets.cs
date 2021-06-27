@@ -7,7 +7,11 @@
             LocalGuid = 0x2C03B40,
             CurrentRage = 0x19 * 4,
             CurrentEnergy = 0x1B * 4,
-            MaxEnergy = 0x23 * 4
+            MaxEnergy = 0x23 * 4,
+            PlayerInformation = 0x198,
+            PlayerPositionX = 0x20,
+            PlayerPositionY = PlayerPositionX + sizeof(float),
+            PlayerPositionZ = PlayerPositionX + sizeof(float) * 2,
         }
 
         internal enum ObjectManager : int

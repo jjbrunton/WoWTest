@@ -22,11 +22,15 @@ namespace WoWTest.GUI
             {
                 this.OneWayBind(this.ViewModel, x => x.NpcList, x => x.NpcList.ItemsSource)
                     .DisposeWith(disposable);
+                this.OneWayBind(this.ViewModel, x => x.PlayerList, x => x.PlayerList.ItemsSource)
+                    .DisposeWith(disposable);
                 this.OneWayBind(this.ViewModel, x => x.Player.Guid, x => x.PlayerGUID.Text)
                     .DisposeWith(disposable);
                 this.OneWayBind(this.ViewModel, x => x.Player.CurrentHealth, x => x.PlayerHealth.Text)
                     .DisposeWith(disposable);
                 this.OneWayBind(this.ViewModel, x => x.Player.Position, x => x.PlayerPosition.Text)
+                    .DisposeWith(disposable);
+                this.OneWayBind(this.ViewModel, x => x.Player.BaseAddress, x => x.PlayerAddress.Text)
                     .DisposeWith(disposable);
             });
         }

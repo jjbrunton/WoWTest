@@ -32,7 +32,8 @@ namespace WoWTest.Core.Models
         {
             get
             {
-                return new Vector3(this.wowProcess.Memory.Read<float>(this.baseAddress + (int)Offsets.WowObject.X), this.wowProcess.Memory.Read<float>(this.baseAddress + (int)Offsets.WowObject.Y), this.wowProcess.Memory.Read<float>(this.baseAddress + (int)Offsets.WowObject.Z));
+                var unitInfo = this.wowProcess.Memory.Read<IntPtr>(this.baseAddress + (int)Offsets.Player.PlayerInformation);
+                return new Vector3(this.wowProcess.Memory.Read<float>(unitInfo + (int)Offsets.Player.PlayerPositionX), this.wowProcess.Memory.Read<float>(unitInfo + (int)Offsets.Player.PlayerPositionY), this.wowProcess.Memory.Read<float>(unitInfo + (int)Offsets.Player.PlayerPositionZ));
             }
         }
 

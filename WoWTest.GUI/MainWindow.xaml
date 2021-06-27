@@ -13,6 +13,10 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
+                <TextBlock>Player Base Address:</TextBlock>
+                <TextBlock Name="PlayerAddress"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
                 <TextBlock>Player GUID:</TextBlock>
                 <TextBlock Name="PlayerGUID"></TextBlock>
             </StackPanel>
@@ -26,20 +30,39 @@
             </StackPanel>
         </StackPanel>
         <Grid Grid.Row="1">
-        <ListView HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="NpcList">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <ListView HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="NpcList">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Guid" Width="Auto" DisplayMemberBinding="{Binding Guid}" />
                     <GridViewColumn Header="Level" Width="Auto" DisplayMemberBinding="{Binding Level}" />
-                    <GridViewColumn Header="Current Health" Width="Auto" DisplayMemberBinding="{Binding CurrentHealth}" />
+                    <GridViewColumn Header="Type" Width="Auto" DisplayMemberBinding="{Binding Type}" />
+                        <GridViewColumn Header="Current Health" Width="Auto" DisplayMemberBinding="{Binding CurrentHealth}" />
                     <GridViewColumn Header="Position" Width="Auto" DisplayMemberBinding="{Binding Position}" />
                     <GridViewColumn Header="Target" Width="Auto" DisplayMemberBinding="{Binding TargetGuid}" />
                 </GridView>
             </ListView.View>
         </ListView>
 
-        
+            <ListView Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="PlayerList">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Guid" Width="Auto" DisplayMemberBinding="{Binding Guid}" />
+                        <GridViewColumn Header="Level" Width="Auto" DisplayMemberBinding="{Binding Level}" />
+                        <GridViewColumn Header="Type" Width="Auto" DisplayMemberBinding="{Binding Type}" />
+                        <GridViewColumn Header="Current Health" Width="Auto" DisplayMemberBinding="{Binding CurrentHealth}" />
+                        <GridViewColumn Header="Position" Width="Auto" DisplayMemberBinding="{Binding Position}" />
+                        <GridViewColumn Header="Target" Width="Auto" DisplayMemberBinding="{Binding TargetGuid}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            </Grid>
 
-    </Grid>
+
+        </Grid>
     </Grid>
 </Window>
